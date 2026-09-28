@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Luis Zambrano | Portafolio</title>
+
+    <style>
+        :root {
+            --verde: #91ad9b;
+            --verde-oscuro: #557b65;
+            --verde-claro: #dce8df;
+            --verde-suave: #edf3ee;
+
+            --negro: #202622;
+            --negro-suave: #303832;
+
+            --dorado: #c6aa72;
+            --dorado-oscuro: #9f8148;
+
+            --crema: #f5f2e9;
+            --blanco: #ffffff;
+
+            --gris: #69776f;
+            --borde: rgba(32, 38, 34, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--crema);
+            color: var(--negro);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(245, 242, 233, 0.92);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid var(--borde);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 18px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--negro);
+            color: var(--crema);
+
+            font-size: 13px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--gris);
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--verde-oscuro);
+        }
+
+        .cv-button {
+            padding: 9px 18px;
+
+            border: 1px solid var(--dorado);
+            border-radius: 30px;
+
+            color: var(--dorado-oscuro);
+
+            font-size: 13px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .cv-button:hover {
+            background: var(--dorado);
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(145, 173, 155, 0.55),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--crema),
+                    var(--verde-suave)
+                );
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .eyebrow {
+            color: var(--dorado-oscuro);
+
+            font-size: 12px;
+            font-weight: bold;
+
+            letter-spacing: 4px;
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--verde-oscuro);
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            color: var(--gris);
+
+            font-size: 18px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+
+            margin-top: 35px;
+
+            flex-wrap: wrap;
+        }
+
+        .button-primary {
+            padding: 14px 25px;
+
+            background: var(--negro);
+            color: white;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-3px);
+            background: var(--verde-oscuro);
+        }
+
+        .button-secondary {
+            padding: 14px 25px;
+
+            border: 1px solid var(--borde);
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.4);
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .button-secondary:hover {
+            border-color: var(--dorado);
+            color: var(--dorado-oscuro);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 90px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-header {
+            margin-bottom: 45px;
+        }
+
+        .section-label {
+            color: var(--dorado-oscuro);
+
+            font-size: 12px;
+            font-weight: bold;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 40px;
+            margin-top: 8px;
+        }
+
+        .section-description {
+            color: var(--gris);
+            max-width: 600px;
+            margin-top: 10px;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        #proyectos {
+            background: var(--crema);
+        }
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.5);
+
+            border: 1px solid var(--borde);
+
+            border-radius: 22px;
+
+            padding: 28px;
+
+            min-height: 350px;
+
+            display: flex;
+            flex-direction: column;
+
+            transition: 0.35s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(198,170,114,0.6);
+
+            box-shadow:
+                0 20px 50px rgba(32,38,34,0.08);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 45px;
+        }
+
+        .project-number {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--verde-claro);
+
+            color: var(--verde-oscuro);
+
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .project-category {
+            padding: 6px 12px;
+
+            border-radius: 30px;
+
+            background: var(--verde-suave);
+
+            color: var(--verde-oscuro);
+
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: var(--gris);
+            font-size: 14px;
+        }
+
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 20px;
+        }
+
+        .technologies span {
+            font-size: 11px;
+            color: var(--gris);
+        }
+
+        .project-link {
+            margin-top: auto;
+            padding-top: 25px;
+
+            color: var(--dorado-oscuro);
+
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            color: var(--verde-oscuro);
+        }
+
+        /* =========================
+           ALL PROJECTS
+        ========================= */
+
+        .all-projects {
+            margin-top: 70px;
+
+            padding-top: 50px;
+
+            border-top: 1px solid var(--borde);
+        }
+
+        .all-projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+        .mini-project {
+            padding: 20px;
+
+            border: 1px solid var(--borde);
+
+            border-radius: 15px;
+
+            background: rgba(255,255,255,0.4);
+
+            transition: 0.3s;
+        }
+
+        .mini-project:hover {
+            background: var(--verde-claro);
+            transform: translateY(-3px);
+        }
+
+        .mini-project strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .mini-project span {
+            font-size: 12px;
+            color: var(--gris);
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: var(--verde-claro);
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 42px;
+            line-height: 1.15;
+        }
+
+        .about-text {
+            color: var(--gris);
+            font-size: 16px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .skill {
+            padding: 9px 15px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.5);
+
+            border: 1px solid rgba(32,38,34,0.1);
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: var(--negro);
+            color: var(--crema);
+
+            text-align: center;
+        }
+
+        .contact .section-label {
+            color: var(--dorado);
+        }
+
+        .contact h2 {
+            font-size: clamp(35px, 5vw, 55px);
+            margin: 10px 0 20px;
+        }
+
+        .contact p {
+            max-width: 600px;
+            margin: auto;
+
+            color: #aab4ad;
+        }
+
+        .contact-button {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 14px 28px;
+
+            border-radius: 30px;
+
+            background: var(--dorado);
+
+            color: var(--negro);
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .contact-button:hover {
+            background: #d7bf8e;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--negro);
+            color: #89958d;
+
+            border-top: 1px solid rgba(255,255,255,0.08);
+
+            padding: 25px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            font-size: 12px;
+        }
+
+        .footer-gold {
+            color: var(--dorado);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .all-projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 15px 18px;
+            }
+
+            .cv-button {
+                display: none;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero-container {
+                padding: 70px 20px;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .all-projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .about h2 {
+                font-size: 34px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+
+        <div class="navbar">
+
+            <a href="#" class="logo">
+
+                <div class="logo-circle">
+                    LZ
+                </div>
+
+                <span>
+                    LUIS ZAMBRANO
+                </span>
+
+            </a>
+
+            <nav>
+
+                <a href="#inicio">
+                    Inicio
+                </a>
+
+                <a href="#proyectos">
+                    Proyectos
+                </a>
+
+                <a href="#sobre-mi">
+                    Sobre mí
+                </a>
+
+                <a href="#contacto">
+                    Contacto
+                </a>
+
+            </nav>
+
+            <a
+                href="https://github.com/luiszambrano232-ai"
+                target="_blank"
+                class="cv-button"
+            >
+                GitHub
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section
+            id="inicio"
+            class="hero"
+        >
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        Desarrollo Web · QA · Programación
+                    </div>
+
+                    <h1>
+                        Ideas que se convierten
+                        <span>
+                            en proyectos.
+                        </span>
+                    </h1>
+
+                    <p>
+                        Bienvenido a mi portafolio.
+                        Aquí reúno algunos de los proyectos
+                        que he desarrollado mientras avanzo
+                        en mi camino dentro de la tecnología.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#proyectos"
+                            class="button-primary"
+                        >
+                            Ver proyectos
+                        </a>
+
+                        <a
+                            href="#sobre-mi"
+                            class="button-secondary"
+                        >
+                            Conóceme
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section id="proyectos">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div class="section-label">
+                        Portafolio
+                    </div>
+
+                    <h2 class="section-title">
+                        Proyectos destacados
+                    </h2>
+
+                    <p class="section-description">
+                        Una selección de proyectos que muestran
+                        diferentes áreas de mi aprendizaje y
+                        desarrollo.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <!-- LZ WEB STUDIO -->
+
+                    <article class="project-card">
+
+                        <div class="project-top">
+
+                            <div class="project-number">
+                                01
+                            </div>
+
+                            <div class="project-category">
+                                WEB
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            LZ Web Studio
+                        </h3>
+
+                        <p>
+                            Proyecto enfocado en la creación
+                            de experiencias y páginas web.
+                        </p>
+
+                        <div class="technologies">
+                            <span>HTML</span>
+                            <span>•</span>
+                            <span>CSS</span>
+                            <span>•</span>
+                            <span>Web Design</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/lzwebstudio"
+                            target="_blank"
+                            class="project-link"
+                        >
+                            Ver en GitHub →
+                        </a>
+
+                    </article>
+
+
+                    <!-- SHOWCAM -->
+
+                    <article class="project-card">
+
+                        <div class="project-top">
+
+                            <div class="project-number">
+                                02
+                            </div>
+
+                            <div class="project-category">
+                                WEB
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            Showcam
+                        </h3>
+
+                        <p>
+                            Proyecto web orientado a la presentación
+                            de contenido y experiencia visual.
+                        </p>
+
+                        <div class="technologies">
+                            <span>HTML</span>
+                            <span>•</span>
+                            <span>CSS</span>
+                            <span>•</span>
+                            <span>UI</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/Showcam"
+                            target="_blank"
+                            class="project-link"
+                        >
+                            Ver en GitHub →
+                        </a>
+
+                    </article>
+
+
+                    <!-- 369 MUSIC -->
+
+                    <article class="project-card">
+
+                        <div class="project-top">
+
+                            <div class="project-number">
+                                03
+                            </div>
+
+                            <div class="project-category">
+                                MÚSICA
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            369 Music
+                        </h3>
+
+                        <p>
+                            Proyecto web relacionado con música,
+                            navegación y presentación de contenido.
+                        </p>
+
+                        <div class="technologies">
+                            <span>HTML</span>
+                            <span>•</span>
+                            <span>CSS</span>
+                            <span>•</span>
+                            <span>Web</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/369music"
+                            target="_blank"
+                            class="project-link"
+                        >
+                            Ver en GitHub →
+                        </a>
+
+                    </article>
+
+
+                    <!-- CAFETERIA -->
+
+                    <article class="project-card">
+
+                        <div class="project-top">
+
+                            <div class="project-number">
+                                04
+                            </div>
+
+                            <div class="project-category">
+                                RESTAURANTE
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            Cafeteria
+                        </h3>
+
+                        <p>
+                            Página web para una cafetería,
+                            enfocada en diseño, estructura
+                            y presentación de productos.
+                        </p>
+
+                        <div class="technologies">
+                            <span>HTML</span>
+                            <span>•</span>
+                            <span>CSS</span>
+                            <span>•</span>
+                            <span>Bootstrap</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/Cafeteria1.1"
+                            target="_blank"
+                            class="project-link"
+                        >
+                            Ver en GitHub →
+                        </a>
+
+                    </article>
+
+
+                    <!-- VETERINARIA -->
+
+                    <article class="project-card">
+
+                        <div class="project-top">
+
+                            <div class="project-number">
+                                05
+                            </div>
+
+                            <div class="project-category">
+                                SERVICIOS
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            Veterinaria
+                        </h3>
+
+                        <p>
+                            Proyecto web orientado a servicios
+                            veterinarios y presentación de información.
+                        </p>
+
+                        <div class="technologies">
+                            <span>HTML</span>
+                            <span>•</span>
+                            <span>CSS</span>
+                            <span>•</span>
+                            <span>Web</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/veterinaria"
+                            target="_blank"
+                            class="project-link"
+                        >
+                            Ver en GitHub →
+                        </a>
+
+                    </article>
+
+
+                    <!-- CARDAPIO -->
+
+                    <article class="project-card">
+
+                        <div class="project-top">
+
+                            <div class="project-number">
+                                06
+                            </div>
+
+                            <div class="project-category">
+                                MENÚ
+                            </div>
+
+                        </div>
+
+                        <h3>
+                            Cardápio
+                        </h3>
+
+                        <p>
+                            Proyecto de menú digital pensado
+                            para presentar productos de forma
+                            clara y atractiva.
+                        </p>
+
+                        <div class="technologies">
+                            <span>HTML</span>
+                            <span>•</span>
+                            <span>CSS</span>
+                            <span>•</span>
+                            <span>UI</span>
+                        </div>
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/cardapio"
+                            target="_blank"
+                            class="project-link"
+                        >
+                            Ver en GitHub →
+                        </a>
+
+                    </article>
+
+                </div>
+
+
+                <!-- =========================
+                     OTHER PROJECTS
+                ========================== -->
+
+                <div class="all-projects">
+
+                    <div class="section-header">
+
+                        <div class="section-label">
+                            Más proyectos
+                        </div>
+
+                        <h2 class="section-title">
+                            También he trabajado en...
+                        </h2>
+
+                    </div>
+
+
+                    <div class="all-projects-grid">
+
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/demo1-3"
+                            target="_blank"
+                            class="mini-project"
+                        >
+                            <strong>
+                                demo1-3
+                            </strong>
+
+                            <span>
+                                Ver repositorio →
+                            </span>
+                        </a>
+
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/demo1-1"
+                            target="_blank"
+                            class="mini-project"
+                        >
+                            <strong>
+                                demo1-1
+                            </strong>
+
+                            <span>
+                                Ver repositorio →
+                            </span>
+                        </a>
+
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/maqueta1.1"
+                            target="_blank"
+                            class="mini-project"
+                        >
+                            <strong>
+                                maqueta1.1
+                            </strong>
+
+                            <span>
+                                Ver repositorio →
+                            </span>
+                        </a>
+
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/demo1-4"
+                            target="_blank"
+                            class="mini-project"
+                        >
+                            <strong>
+                                demo1-4
+                            </strong>
+
+                            <span>
+                                Ver repositorio →
+                            </span>
+                        </a>
+
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/parati"
+                            target="_blank"
+                            class="mini-project"
+                        >
+                            <strong>
+                                parati
+                            </strong>
+
+                            <span>
+                                Ver repositorio →
+                            </span>
+                        </a>
+
+
+                        <a
+                            href="https://github.com/luiszambrano232-ai/demo1-2"
+                            target="_blank"
+                            class="mini-project"
+                        >
+                            <strong>
+                                demo1-2
+                            </strong>
+
+                            <span>
+                                Ver repositorio →
+                            </span>
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section
+            id="sobre-mi"
+            class="about"
+        >
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <div>
+
+                        <div class="section-label">
+                            Sobre mí
+                        </div>
+
+                        <h2>
+                            Aprender.
+                            Crear.
+                            Evolucionar.
+                        </h2>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="about-text">
+
+                            Estoy construyendo mi camino dentro
+                            del mundo de la tecnología a través
+                            de proyectos reales, aprendizaje
+                            constante y mucha curiosidad.
+
+                            <br><br>
+
+                            Actualmente estoy desarrollando
+                            conocimientos en programación,
+                            desarrollo web, bases de datos y QA.
+
+                        </p>
+
+
+                        <div class="skills">
+
+                            <div class="skill">
+                                HTML
+                            </div>
+
+                            <div class="skill">
+                                CSS
+                            </div>
+
+                            <div class="skill">
+                                Bootstrap
+                            </div>
+
+                            <div class="skill">
+                                SQL
+                            </div>
+
+                            <div class="skill">
+                                SQLite
+                            </div>
+
+                            <div class="skill">
+                                Git
+                            </div>
+
+                            <div class="skill">
+                                QA
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section
+            id="contacto"
+            class="contact"
+        >
+
+            <div class="container">
+
+                <div class="section-label">
+                    Contacto
+                </div>
+
+                <h2>
+                    ¿Construimos algo?
+                </h2>
+
+                <p>
+                    Si quieres conocer mis proyectos,
+                    colaborar o simplemente hablar sobre
+                    desarrollo web y tecnología, puedes
+                    encontrarme en GitHub.
+                </p>
+
+                <a
+                    href="https://github.com/luiszambrano232-ai"
+                    target="_blank"
+                    class="contact-button"
+                >
+                    Visitar mi GitHub
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <span>
+                © 2026 Luis Zambrano
+            </span>
+
+            <span class="footer-gold">
+                Hecho con dedicación.
+            </span>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
