@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portafolio de Luis Zambrano: desarrollo web, diseño y QA para pequeños negocios y emprendimientos.">
 
 <title>LZ Web Studio | Portafolio</title>
 
@@ -16,6 +17,8 @@
     --gold:#C6AA72;
     --gray:#69776F;
     --white:#ffffff;
+    --whatsapp:#25D366;
+    --whatsapp-dark:#1EBE5A;
 }
 
 *{
@@ -26,12 +29,19 @@
 
 html{
     scroll-behavior:smooth;
+    /* evita que el nav fijo tape los títulos al navegar por anclas */
+    scroll-padding-top:80px;
 }
 
 body{
     font-family:Arial, Helvetica, sans-serif;
     background:var(--cream);
     color:var(--black);
+}
+
+a:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:3px;
 }
 
 /* NAVBAR */
@@ -208,33 +218,19 @@ section{
     position:relative;
 }
 
+/* el iframe se escala a 65%: se agranda a 1/0.65 = 153.8% para llenar la tarjeta */
 .preview iframe{
-    width:100%;
-    height:100%;
+    width:153.8%;
+    height:153.8%;
 
     border:0;
 
     transform:scale(.65);
     transform-origin:top left;
 
-    width:153.8%;
-    height:153.8%;
-
     pointer-events:none;
 
     background:white;
-}
-
-/* overlay */
-
-.preview::after{
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:transparent;
 }
 
 /* CARD CONTENT */
@@ -370,6 +366,13 @@ section{
     max-width:550px;
 }
 
+.contact-actions{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+}
+
 .contact-button{
     display:inline-block;
 
@@ -384,6 +387,21 @@ section{
     text-decoration:none;
 
     font-weight:bold;
+
+    transition:.3s;
+}
+
+.contact-button:hover{
+    transform:translateY(-3px);
+}
+
+.contact-button.whatsapp{
+    background:var(--whatsapp);
+    color:var(--black);
+}
+
+.contact-button.whatsapp:hover{
+    background:var(--whatsapp-dark);
 }
 
 /* FOOTER */
@@ -398,6 +416,60 @@ footer{
     color:#aeb8b0;
 
     font-size:13px;
+}
+
+/* WHATSAPP FLOTANTE */
+
+.whatsapp-float{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:1100;
+
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--whatsapp);
+    color:var(--white);
+
+    box-shadow:0 10px 25px rgba(32,38,34,.28);
+
+    transition:transform .3s, background .3s;
+
+    animation:wa-pulse 2.4s ease-out 1.5s 3;
+}
+
+.whatsapp-float svg{
+    width:32px;
+    height:32px;
+    fill:currentColor;
+}
+
+.whatsapp-float:hover{
+    background:var(--whatsapp-dark);
+    transform:scale(1.08);
+}
+
+.whatsapp-float:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:4px;
+}
+
+@keyframes wa-pulse{
+    0%{ box-shadow:0 10px 25px rgba(32,38,34,.28), 0 0 0 0 rgba(37,211,102,.55); }
+    70%{ box-shadow:0 10px 25px rgba(32,38,34,.28), 0 0 0 20px rgba(37,211,102,0); }
+    100%{ box-shadow:0 10px 25px rgba(32,38,34,.28), 0 0 0 0 rgba(37,211,102,0); }
+}
+
+@media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    .whatsapp-float{ animation:none; }
 }
 
 /* MOBILE */
@@ -430,6 +502,13 @@ footer{
 
     .buttons{
         flex-direction:column;
+    }
+
+    .whatsapp-float{
+        right:16px;
+        bottom:16px;
+        width:56px;
+        height:56px;
     }
 
 }
@@ -505,7 +584,9 @@ footer{
 
                 <iframe
                     src="https://luiszambrano232-ai.github.io/demo1-3/"
-                    loading="lazy">
+                    title="Vista previa de Adriana Spa & Nails"
+                    loading="lazy"
+                    tabindex="-1">
                 </iframe>
 
             </div>
@@ -530,6 +611,7 @@ footer{
                     <a
                     href="https://luiszambrano232-ai.github.io/demo1-3/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-page">
                         Ver página
                     </a>
@@ -537,6 +619,7 @@ footer{
                     <a
                     href="https://github.com/luiszambrano232-ai/demo1-3"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-github">
                         GitHub
                     </a>
@@ -556,7 +639,9 @@ footer{
 
                 <iframe
                     src="https://luiszambrano232-ai.github.io/demo1-1/"
-                    loading="lazy">
+                    title="Vista previa de Zury's Cafetería"
+                    loading="lazy"
+                    tabindex="-1">
                 </iframe>
 
             </div>
@@ -581,6 +666,7 @@ footer{
                     <a
                     href="https://luiszambrano232-ai.github.io/demo1-1/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-page">
                         Ver página
                     </a>
@@ -588,6 +674,7 @@ footer{
                     <a
                     href="https://github.com/luiszambrano232-ai/demo1-1"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-github">
                         GitHub
                     </a>
@@ -607,7 +694,9 @@ footer{
 
                 <iframe
                     src="https://luiszambrano232-ai.github.io/369music/"
-                    loading="lazy">
+                    title="Vista previa de 369 Music"
+                    loading="lazy"
+                    tabindex="-1">
                 </iframe>
 
             </div>
@@ -632,6 +721,7 @@ footer{
                     <a
                     href="https://luiszambrano232-ai.github.io/369music/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-page">
                         Ver página
                     </a>
@@ -639,6 +729,7 @@ footer{
                     <a
                     href="https://github.com/luiszambrano232-ai/369music"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-github">
                         GitHub
                     </a>
@@ -658,7 +749,9 @@ footer{
 
                 <iframe
                     src="https://luiszambrano232-ai.github.io/Cafeteria1.1/"
-                    loading="lazy">
+                    title="Vista previa de Cafetería"
+                    loading="lazy"
+                    tabindex="-1">
                 </iframe>
 
             </div>
@@ -681,6 +774,7 @@ footer{
                     <a
                     href="https://luiszambrano232-ai.github.io/Cafeteria1.1/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-page">
                         Ver página
                     </a>
@@ -688,6 +782,7 @@ footer{
                     <a
                     href="https://github.com/luiszambrano232-ai/Cafeteria1.1"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-github">
                         GitHub
                     </a>
@@ -707,7 +802,9 @@ footer{
 
                 <iframe
                     src="https://luiszambrano232-ai.github.io/veterinaria/"
-                    loading="lazy">
+                    title="Vista previa de Veterinaria"
+                    loading="lazy"
+                    tabindex="-1">
                 </iframe>
 
             </div>
@@ -732,6 +829,7 @@ footer{
                     <a
                     href="https://luiszambrano232-ai.github.io/veterinaria/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-page">
                         Ver página
                     </a>
@@ -739,6 +837,7 @@ footer{
                     <a
                     href="https://github.com/luiszambrano232-ai/veterinaria"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-github">
                         GitHub
                     </a>
@@ -758,7 +857,9 @@ footer{
 
                 <iframe
                     src="https://luiszambrano232-ai.github.io/cardapio/"
-                    loading="lazy">
+                    title="Vista previa de Cardápio"
+                    loading="lazy"
+                    tabindex="-1">
                 </iframe>
 
             </div>
@@ -783,6 +884,7 @@ footer{
                     <a
                     href="https://luiszambrano232-ai.github.io/cardapio/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-page">
                         Ver página
                     </a>
@@ -790,6 +892,7 @@ footer{
                     <a
                     href="https://github.com/luiszambrano232-ai/cardapio"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-github">
                         GitHub
                     </a>
@@ -862,14 +965,29 @@ footer{
         landing pages y soluciones digitales.
     </p>
 
-    <a
-    href="https://github.com/luiszambrano232-ai"
-    target="_blank"
-    class="contact-button">
+    <div class="contact-actions">
 
-        Ver mi GitHub
+        <a
+        href="https://wa.me/56958214438?text=Hola%20Luis%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-button whatsapp">
 
-    </a>
+            Escríbeme por WhatsApp
+
+        </a>
+
+        <a
+        href=" https://luiszambrano232-ai.github.io/lzwebstudio/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-button">
+
+            Ver mi GitHub
+
+        </a>
+
+    </div>
 
 </section>
 
@@ -879,6 +997,23 @@ footer{
     © 2026 LZ Web Studio · Luis Zambrano
 
 </footer>
+
+
+<!-- BOTÓN FLOTANTE DE WHATSAPP -->
+
+<a
+href="https://wa.me/56958214438?text=Hola%20Luis%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto."
+class="whatsapp-float"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Escribir por WhatsApp"
+title="Escríbeme por WhatsApp">
+
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="M16.003 3C8.83 3 3 8.83 3 16c0 2.29.6 4.52 1.74 6.49L3 29l6.68-1.72A12.94 12.94 0 0 0 16.003 29C23.17 29 29 23.17 29 16S23.17 3 16.003 3zm0 23.7c-1.95 0-3.86-.53-5.53-1.52l-.4-.24-3.96 1.02 1.06-3.86-.26-.4A10.66 10.66 0 0 1 5.3 16c0-5.9 4.8-10.7 10.703-10.7 5.9 0 10.7 4.8 10.7 10.7s-4.8 10.7-10.7 10.7zm5.87-8c-.32-.16-1.9-.94-2.2-1.05-.3-.1-.5-.16-.72.16-.22.32-.83 1.05-1.02 1.27-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.14-.14.32-.38.48-.57.16-.19.22-.32.32-.54.11-.22.05-.4-.03-.57-.08-.16-.72-1.74-.99-2.38-.26-.62-.52-.54-.72-.55h-.62c-.22 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.69 0 1.58 1.16 3.12 1.32 3.33.16.22 2.27 3.47 5.5 4.87.77.33 1.37.53 1.84.68.77.24 1.47.21 2.03.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.3-.21-.62-.37z"/>
+    </svg>
+
+</a>
 
 
 </body>
